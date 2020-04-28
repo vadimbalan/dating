@@ -13,7 +13,7 @@ $f3 = Base::instance();
 // Default route
 $f3->route('GET /', function()
 {
-    //echo '<h1>Welcome to my Food Page</h1>';
+    //echo '<h1>Welcome to my Dating Website!</h1>';
 
     $view = new Template();
     echo $view->render('views/home.html');
