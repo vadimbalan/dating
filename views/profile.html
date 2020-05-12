@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <include href="includes/header.html"></include>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light nav-color container rounded">
+        <a class="navbar-brand text-white" href="../">Vadim's Dating Website</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link text-white" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <form action="#" method="post">
+        <div class="container box-border">
+            <h1>Profile</h1>
+            <hr>
+            <div class="row form-group">
+                <div class="col-6">
+                    <label for="email"><strong>Email</strong></label>
+                    <input type="email" class="form-control" id="email" placeholder="my_email@gmail.com">
+                    <br>
+                    <label for="state"><strong>State</strong></label>
+                    <select id="state" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>...</option>
+                    </select>
+                    <br>
+                    <label><strong>Seeking</strong></label>
+                    <div>
+                        <input type="radio" id="male" name="seeking" value="male">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="seeking" value="female">
+                        <label for="female">Female</label>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <label for="bio"><strong>Biography</strong></label>
+                    <textarea class="form-control" id="bio" rows="5" placeholder="Information about yourself..."></textarea>
+                </div>
+                <div class="col-12">
+                    <a href="profile/interests" class="btn btn-primary float-right">Next ></a>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

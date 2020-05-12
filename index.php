@@ -10,6 +10,9 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
+// Start a session
+session_start();
+
 // Require the autoload file
 require_once("vendor/autoload.php");
 
@@ -26,10 +29,36 @@ $f3->route('GET /', function()
 });
 
 // Route to personal information
-$f3->route('GET /information', function()
+$f3->route('GET|POST /information', function($f3)
 {
+    if($_SERVER['REQUEST_METHOD'] == 'POST')
+    {
+        // Testing
+        // var_dump($_POST);
+
+
+
+
+        // Redirect to condiments page
+        $f3->reroute('/information/profile');
+    }
+
     $view = new Template();
     echo $view->render('views/information.html');
+});
+
+// Route to profile
+$f3->route('GET /information/profile', function()
+{
+    $view = new Template();
+    echo $view->render('views/profile.html');
+});
+
+// Route to interests
+$f3->route('GET /information/profile/interests', function()
+{
+    $view = new Template();
+    echo $view->render('views/interests.html');
 });
 
 // Run F3

@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <title>Personal Information</title>
     <include href="includes/header.html"></include>
+    <link rel="stylesheet" href="/328/dating/styles/styles.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light nav-color container rounded">
-        <a class="navbar-brand text-white" href="#">Vadim's Dating Website</a>
+        <a class="navbar-brand text-white" href="../../328/dating">Vadim's Dating Website</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -19,28 +20,21 @@
             </ul>
         </div>
     </nav>
-    <form>
-        <div class="container box-border">
+    <form action="#" method="post">
+        <div class="container box-border form-group">
             <h1>Personal Information</h1>
             <hr>
-            <div class="row form-group">
+            <div class="row">
                 <div class="col-8">
                     <label for="fName"><strong>First Name</strong></label>
-                    <input type="text" class="form-control" id="fName" placeholder="First name">
-                </div>
-                <div class="col-4">
-                    <p><strong>Note: </strong>All information entered is protected by our <a>privacy policy.</a> Profile
-                    information can only be viewed by others with your permission.</p>
-                </div>
-                <div class="col-8">
+                    <input type="text" class="form-control" id="fName" name="fName" placeholder="First name">
+                    <br>
                     <label for="lName"><strong>Last Name</strong></label>
-                    <input type="text" class="form-control" id="lName" placeholder="Last name">
-                </div>
-                <div class="col-8">
+                    <input type="text" class="form-control" id="lName" name="lName" placeholder="Last name">
+                    <br>
                     <label for="age"><strong>Age</strong></label>
-                    <input type="text" class="form-control" id="age" placeholder="Age">
-                </div>
-                <div class="col-8">
+                    <input type="text" class="form-control" id="age" name="age" placeholder="Age">
+                    <br>
                     <label><strong>Gender</strong></label>
                     <div>
                         <input type="radio" id="male" name="gender" value="male">
@@ -48,10 +42,16 @@
                         <input type="radio" id="female" name="gender" value="female">
                         <label for="female">Female</label>
                     </div>
-                </div>
-                <div class="col-8">
+                    <br>
                     <label for="phone"><strong>Phone Number</strong></label>
                     <input type="tel" class="form-control" id="phone" name="phone" placeholder="222-333-4444">
+                </div>
+                <div class="col-4">
+                    <p><strong>Note: </strong>All information entered is protected by our <a>privacy policy.</a> Profile
+                    information can only be viewed by others with your permission.</p>
+                </div>
+                <div class="col-12">
+                    <input href="information/profile" class="form-group btn btn-primary float-right" type="submit" value="Next >">
                 </div>
             </div>
         </div>
