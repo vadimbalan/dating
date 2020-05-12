@@ -36,7 +36,13 @@ $f3->route('GET|POST /information', function($f3)
         // Testing
         // var_dump($_POST);
 
-
+        // Data is valid
+        // Store the data in the session array
+        $_SESSION['fName'] = $_POST['fName'];
+        $_SESSION['lName'] = $_POST['lName'];
+        $_SESSION['age'] = $_POST['age'];
+        $_SESSION['gender'] = $_POST['gender'];
+        $_SESSION['phone'] = $_POST['phone'];
 
 
         // Redirect to condiments page
