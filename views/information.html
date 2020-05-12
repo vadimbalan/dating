@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Information</title>
+    <include href="includes/header.html"></include>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light nav-color container rounded">
+        <a class="navbar-brand text-white" href="#">Vadim's Dating Website</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link text-white" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <form>
+        <div class="container box-border">
+            <h1>Personal Information</h1>
+            <hr>
+            <div class="row form-group">
+                <div class="col-8">
+                    <label for="fName"><strong>First Name</strong></label>
+                    <input type="text" class="form-control" id="fName" placeholder="First name">
+                </div>
+                <div class="col-4">
+                    <p><strong>Note: </strong>All information entered is protected by our <a>privacy policy.</a> Profile
+                    information can only be viewed by others with your permission.</p>
+                </div>
+                <div class="col-8">
+                    <label for="lName"><strong>Last Name</strong></label>
+                    <input type="text" class="form-control" id="lName" placeholder="Last name">
+                </div>
+                <div class="col-8">
+                    <label for="age"><strong>Age</strong></label>
+                    <input type="text" class="form-control" id="age" placeholder="Age">
+                </div>
+                <div class="col-8">
+                    <label><strong>Gender</strong></label>
+                    <div>
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <label for="phone"><strong>Phone Number</strong></label>
+                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="222-333-4444">
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

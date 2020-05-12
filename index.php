@@ -1,4 +1,10 @@
 <?php
+/*
+ * Name: Vadim Balan
+ * Date: 04/29/2020
+ * Description: This file is the index file that handles all the routing of the
+ * dating website.
+ */
 
 // Turn on error reporting
 ini_set('display_errors', 1);
@@ -17,6 +23,13 @@ $f3->route('GET /', function()
 
     $view = new Template();
     echo $view->render('views/home.html');
+});
+
+// Route to personal information
+$f3->route('GET /information', function()
+{
+    $view = new Template();
+    echo $view->render('views/information.html');
 });
 
 // Run F3
