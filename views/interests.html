@@ -26,52 +26,20 @@
         <label><strong>In-door Interests</strong></label>
         <div class="row form-group">
             <div class="col-3 checkBoxPadding">
-                <input type="checkbox" id="tv" name="tv" value="tv">
-                <label for="tv">tv</label><br>
-                <input type="checkbox" id="puzzles" name="puzzles" value="puzzles">
-                <label for="puzzles">puzzles</label><br>
-            </div>
-            <div class="col-3 checkBoxPadding">
-                <input type="checkbox" id="movies" name="movies" value="movies">
-                <label for="movies">movies</label><br>
-                <input type="checkbox" id="reading" name="reading" value="reading">
-                <label for="reading">reading</label><br>
-            </div>
-            <div class="col-3 checkBoxPadding">
-                <input type="checkbox" id="cookies" name="cookies" value="cookies">
-                <label for="cookies">cookies</label><br>
-                <input type="checkbox" id="playing cards" name="playing cards" value="playing cards">
-                <label for="playing cards">playing cards</label><br>
-            </div>
-            <div class="col-2 checkBoxPadding">
-                <input type="checkbox" id="board games" name="board games" value="board games">
-                <label for="board games">board games</label><br>
-                <input type="checkbox" id="video games" name="video games" value="video games">
-                <label for="video games">video games</label><br>
+                <repeat group="{{ @indoor }}" value="{{ @indoors }}">
+                    <label><input type="checkbox" name="indoor[]" value="{{ @indoors }}"> {{ ucfirst(@indoors) }}</label><br>
+                </repeat>
             </div>
         </div>
         <label><strong>Out-door Interests</strong></label>
         <div class="row form-group">
             <div class="col-3 checkBoxPadding">
-                <input type="checkbox" id="hiking" name="hiking" value="hiking">
-                <label for="hiking">hiking</label><br>
-                <input type="checkbox" id="walking" name="walking" value="walking">
-                <label for="walking">walking</label><br>
+                <repeat group="{{ @outdoor }}" value="{{ @outdoor }}">
+                    <label><input type="checkbox" name="outdoor[]" value="{{ @outdoor }}"> {{ ucfirst(@outdoor) }}</label><br>
+                </repeat>
             </div>
-            <div class="col-3 checkBoxPadding">
-                <input type="checkbox" id="biking" name="biking" value="biking">
-                <label for="biking">biking</label><br>
-                <input type="checkbox" id="climbing" name="climbing" value="climbing">
-                <label for="climbing">climbing</label><br>
-            </div>
-            <div class="col-3 checkBoxPadding">
-                <input type="checkbox" id="swimming" name="swimming" value="swimming">
-                <label for="swimming">swimming</label><br>
-            </div>
-            <div class="col-2 checkBoxPadding">
-                <input type="checkbox" id="collecting" name="collecting" value="collecting">
-                <label for="collecting">collecting</label><br>
-            </div>
+        <div class="col-12">
+            <input href="interests/summary" class="form-group btn btn-primary float-right" type="submit" value="Next >">
         </div>
     </div>
 </form>
