@@ -18,13 +18,6 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link text-white" href="">Home <span class="sr-only">(current)</span></a>
-            </li>
-        </ul>
-    </div>
 </nav>
 
 <div class="container box-border">
@@ -32,21 +25,21 @@
     <div class="row">
         <div class="col-6 boxPadding">
             <ul class="list-group">
-                <li class="list-group-item">Name: {{ @SESSION.fName}} {{ @SESSION.lName }}</li>
-                <li class="list-group-item">Gender: {{ @SESSION.gender }} </li>
-                <li class="list-group-item">Age: {{ @SESSION.age }}</li>
-                <li class="list-group-item">Phone: {{ @SESSION.phone }}</li>
-                <li class="list-group-item">Email: {{ @SESSION.email }}</li>
-                <li class="list-group-item">State: {{ @SESSION.state }}</li>
-                <li class="list-group-item">Seeking: {{ @SESSION.seeking }}</li>
-                <li class="list-group-item">Interests:  {{ implode(@SESSION.indoor, " ") }} {{ implode(@SESSION.outdoor, " ") }}</li>
+                <li class="list-group-item">Name: {{ @@SESSION.fName->getfName() }} {{ @lName }}</li>
+                <li class="list-group-item">Gender: {{ @gender }} </li>
+                <li class="list-group-item">Age: {{ @age }}</li>
+                <li class="list-group-item">Phone: {{ @phone }}</li>
+                <li class="list-group-item">Email: {{ @email }}</li>
+                <li class="list-group-item">State: {{ @state }}</li>
+                <li class="list-group-item">Seeking: {{ @seeking }}</li>
+                <li class="list-group-item">Interests:  {{ implode(@indoor, " ") }} {{ implode(@outdoor, " ") }}</li>
             </ul>
         </div>
 
         <div class="col-6 boxPadding text-center">
             <img src="../../../images/profile.jpg" class="img-round" alt="No profile picture">
             <h4>Biography</h4>
-            <p>{{ @SESSION.bio }}</p>
+            <p>{{ @bio }}</p>
         </div>
     </div>
     <div class="text-center">

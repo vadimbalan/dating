@@ -31,7 +31,12 @@
             <div class="row form-group">
                 <div class="col-6">
                     <label for="email"><strong>Email</strong></label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="my_email@gmail.com">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="my_email@gmail.com" value="{{ @email }}">
+                    <span class="err">
+                        <check if="{{ isset(@errors['email']) }}">
+                            {{ @errors['email'] }}
+                        </check>
+                    </span>
                     <br>
                     <label for="state"><strong>State</strong></label>
                     <select id="state" class="form-control" name="state">

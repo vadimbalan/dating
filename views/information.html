@@ -17,13 +17,6 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link text-white" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-            </ul>
-        </div>
     </nav>
     <form action="#" method="post">
         <div class="container box-border form-group">
@@ -32,13 +25,28 @@
             <div class="row">
                 <div class="col-8">
                     <label for="fName"><strong>First Name</strong></label>
-                    <input type="text" class="form-control" id="fName" name="fName" placeholder="First name">
+                    <input type="text" class="form-control" id="fName" name="fName" placeholder="First name" value="{{ @fName }}">
+                    <span class="err">
+                        <check if="{{ isset(@errors['first']) }}">
+                            {{ @errors['first'] }}
+                        </check>
+                    </span>
                     <br>
                     <label for="lName"><strong>Last Name</strong></label>
-                    <input type="text" class="form-control" id="lName" name="lName" placeholder="Last name">
+                    <input type="text" class="form-control" id="lName" name="lName" placeholder="Last name" value="{{ @lName }}">
+                    <span class="err">
+                        <check if="{{ isset(@errors['last']) }}">
+                            {{ @errors['last'] }}
+                        </check>
+                    </span>
                     <br>
                     <label for="age"><strong>Age</strong></label>
-                    <input type="text" class="form-control" id="age" name="age" placeholder="Age">
+                    <input type="text" class="form-control" id="age" name="age" placeholder="Age" value="{{ @age }}">
+                    <span class="err">
+                        <check if="{{ isset(@errors['age']) }}">
+                            {{ @errors['age'] }}
+                        </check>
+                    </span>
                     <br>
                     <label><strong>Gender</strong></label>
                     <div>
@@ -49,7 +57,12 @@
                     </div>
                     <br>
                     <label for="phone"><strong>Phone Number</strong></label>
-                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="222-333-4444">
+                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="222-333-4444" value="{{ @phone }}">
+                    <span class="err">
+                        <check if="{{ isset(@errors['phone']) }}">
+                            {{ @errors['phone'] }}
+                        </check>
+                    </span>
                 </div>
                 <div class="col-4">
                     <p><strong>Note: </strong>All information entered is protected by our <a>privacy policy.</a> Profile
