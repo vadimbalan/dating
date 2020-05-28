@@ -23,20 +23,31 @@
         <hr>
         <label><strong>In-door Interests</strong></label>
         <div class="row form-group">
-            <div class="col-3 checkBoxPadding">
-                <repeat group="{{ @indoor }}" value="{{ @indoors }}">
-                    <label><input type="checkbox" name="indoor[]" value="{{ @indoors }}"> {{ ucfirst(@indoors) }}</label><br>
-                </repeat>
-            </div>
+            <repeat group="{{ @indoor }}" value="{{ @indoors }}">
+                <div class="col-3 checkBoxPadding">
+                    <label><input type="checkbox" name="indoor[]" value="{{ @indoors }}" > {{ ucfirst(@indoors) }}</label>
+                </div>
+            </repeat>
         </div>
+        <span class="err">
+            <check if="{{ isset(@errors['indoor']) }}">
+                {{ @errors['indoor'] }}
+            </check>
+        </span>
+        <br>
         <label><strong>Out-door Interests</strong></label>
         <div class="row form-group">
-            <div class="col-3 checkBoxPadding">
-                <repeat group="{{ @outdoors }}" value="{{ @outdoor }}">
-                    <label><input type="checkbox" name="outdoors[]" value="{{ @outdoor }}"> {{ ucfirst(@outdoor) }}</label><br>
-                </repeat>
-            </div>
+            <repeat group="{{ @outdoor }}" value="{{ @outdoors }}">
+                <div class="col-3 checkBoxPadding">
+                    <label><input type="checkbox" name="outdoor[]" value="{{ @outdoors }}"> {{ ucfirst(@outdoors) }}</label>
+                </div>
+            </repeat>
         </div>
+        <span class="err">
+            <check if="{{ isset(@errors['outdoor']) }}">
+                {{ @errors['outdoor'] }}
+            </check>
+        </span>
         <div class="col-12">
             <div class="text-right">
                 <button type="submit" class="btn btn-primary">Next ></button>

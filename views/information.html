@@ -27,16 +27,16 @@
                     <label for="fName"><strong>First Name</strong></label>
                     <input type="text" class="form-control" id="fName" name="fName" placeholder="First name" value="{{ @fName }}">
                     <span class="err">
-                        <check if="{{ isset(@errors['first']) }}">
-                            {{ @errors['first'] }}
+                        <check if="{{ isset(@errors['fName']) }}">
+                            {{ @errors['fName'] }}
                         </check>
                     </span>
                     <br>
                     <label for="lName"><strong>Last Name</strong></label>
                     <input type="text" class="form-control" id="lName" name="lName" placeholder="Last name" value="{{ @lName }}">
                     <span class="err">
-                        <check if="{{ isset(@errors['last']) }}">
-                            {{ @errors['last'] }}
+                        <check if="{{ isset(@errors['lName']) }}">
+                            {{ @errors['lName'] }}
                         </check>
                     </span>
                     <br>
