@@ -65,7 +65,8 @@ $f3->route('GET|POST /information', function($f3)
     $f3->set('fName', $_POST['fName']);
     $f3->set('lName', $_POST['lName']);
     $f3->set('age', $_POST['age']);
-    $f3->set('gender', $_POST['gender']);
+    $f3->set('genders', getGender());
+    $f3->set('sGender', $_POST['gender']);
     $f3->set('phone', $_POST['phone']);
 
     $view = new Template();
@@ -95,6 +96,8 @@ $f3->route('GET|POST /information/profile', function($f3)
     }
 
     $f3->set('email', $_POST['email']);
+    $f3->set('sexes', getSeek());
+    $f3->set('sSex', $_POST['sex']);
     $view = new Template();
     echo $view->render('views/profile.html');
 });

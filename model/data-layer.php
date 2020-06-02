@@ -33,3 +33,21 @@ function getOutdoor()
 {
     return array("hiking", "biking", "swimming", "collecting", "walking", "climbing");
 }
+
+/* getGender()
+ * Return an array of gender options
+ * @return array
+ */
+function getGender()
+{
+    return array("Male", "Female");
+}
+
+/* getSeek()
+ * Return an array of seeking options
+ * @return array
+ */
+function getSeek()
+{
+    return array("Male", "Female");
+}

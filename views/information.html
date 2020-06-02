@@ -50,10 +50,15 @@
                     <br>
                     <label><strong>Gender</strong></label>
                     <div>
-                        <input type="radio" id="male" name="gender" value="male">
-                        <label for="male">Male</label>
-                        <input type="radio" id="female" name="gender" value="female">
-                        <label for="female">Female</label>
+                        <repeat group="{{ @genders }}" value="{{ @gender }}">
+                            <input type="radio" name="gender" id="{{ @gender }}"
+                                   value="{{ @gender }}"
+                            <check if="{{ @gender == @sGender }}">
+                                checked="checked"
+                            </check>
+                            >
+                            <label for="{{ @gender }}"> {{ ucfirst(@gender) }} </label>
+                        </repeat>
                     </div>
                     <br>
                     <label for="phone"><strong>Phone Number</strong></label>
@@ -63,6 +68,11 @@
                             {{ @errors['phone'] }}
                         </check>
                     </span>
+                    <br>
+                    <label><strong>Premium Membership</strong></label>
+                    <br>
+                    <input type="checkbox" id="membership" name="membership" value="Premium">
+                    <label for="membership">Sign me up for a Premium Account!</label>
                 </div>
                 <div class="col-4">
                     <p><strong>Note: </strong>All information entered is protected by our <a>privacy policy.</a> Profile

@@ -95,10 +95,16 @@
                     <br>
                     <label><strong>Seeking</strong></label>
                     <div>
-                        <input type="radio" id="male" name="seeking" value="male">
-                        <label for="male">Male</label>
-                        <input type="radio" id="female" name="seeking" value="female">
-                        <label for="female">Female</label>
+                        <repeat group="{{ @sexes }}" value="{{ @sex }}">
+                            <input type="radio" name="sex" id="{{ @sex }}" value="{{ @sex }}"
+
+                            <check if="{{ @sex == @sSex }}">
+                                checked="checked"
+                            </check>
+
+                            >
+                            <label for="{{ @sex }}">{{ ucfirst(@sex) }}</label>
+                        </repeat>
                     </div>
                 </div>
                 <div class="col-6">
