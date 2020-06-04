@@ -4,7 +4,6 @@ class Controller
 {
     private $_f3; //router
     private $_validator; //validation object
-
     /**
      * Controller constructor.
      * @param $f3
@@ -60,21 +59,26 @@ class Controller
             if (empty($this->_f3->get('errors')))
             {
                 //Store the data in the session array
-                $_SESSION['fName'] = $_POST['fName'];
-                $_SESSION['lName'] = $_POST['lName'];
-                $_SESSION['age'] = $_POST['age'];
-                $_SESSION['gender'] = $_POST['gender'];
-                $_SESSION['phone'] = $_POST['phone'];
+                if (isset($_POST['membership']))
+                {
+                    $member = new PremiumMember($_POST['fName'], $_POST['lName'], $_POST['age'], $_POST['gender'],
+                        $_POST['phone']);
+                }
+                else
+                {
+                    $member = new Member($_POST['fName'], $_POST['lName'],
+                        $_POST['age'], $_POST['gender'], $_POST['phone']);
+                }
+
+                $_SESSION['member'] = $member;
+
 
                 $this->_f3->reroute('/information/profile');
             }
         }
-        $this->_f3->set('fName', $_POST['fName']);
-        $this->_f3->set('lName', $_POST['lName']);
-        $this->_f3->set('age', $_POST['age']);
         $this->_f3->set('genders', getGender());
         $this->_f3->set('sGender', $_POST['gender']);
-        $this->_f3->set('phone', $_POST['phone']);
+        $this->_f3->set('membership', $_POST['membership']);
 
         $view = new Template();
         echo $view->render('views/information.html');
@@ -85,6 +89,7 @@ class Controller
      */
     public function profile()
     {
+        //var_dump($_POST);
         if($_SERVER['REQUEST_METHOD'] == 'POST')
         {
             if (!$this->_validator->validEmail($_POST['email']))
@@ -95,12 +100,19 @@ class Controller
             // Data is valid
             if (empty($this->_f3->get('errors')))
             {
-                $_SESSION['state'] = $_POST['state'];
-                $_SESSION['seeking'] = $_POST['seeking'];
-                $_SESSION['bio'] = $_POST['bio'];
-                $_SESSION['email'] = $_POST['email'];
+                $_SESSION['member']->setState($_POST['state']);
+                $_SESSION['member']->setSeeking($_POST['sex']);
+                $_SESSION['member']->setBio($_POST['bio']);
+                $_SESSION['member']->setEmail($_POST['email']);
 
-                $this->_f3->reroute('/information/profile/interests');
+                if($_SESSION['member'] instanceof PremiumMember)
+                {
+                    $this->_f3->reroute('/information/profile/interests');
+                }
+                else
+                {
+                    $this->_f3->reroute('summary');
+                }
             }
         }
 
@@ -132,17 +144,17 @@ class Controller
             if (empty($this->_f3->get('errors')))
             {
                 // store the data in the session array
-                $_SESSION['outdoor'] = $_POST['outdoor'];
-                $_SESSION['indoor'] = $_POST['indoor'];
+                $_SESSION['member']->setOutDoorInterests($_POST['outdoor']);
+                $_SESSION['member']->setInDoorInterests($_POST['indoor']);
 
                 $this->_f3->reroute('summary');
+
                 session_destroy();
             }
         }
         $this->_f3->set('outdoor', getOutdoor());
-        $this->_f3->set('outdoors', $_POST['outdoor']);
         $this->_f3->set('indoor', getIndoor());
-        $this->_f3->set('indoors', $_POST['indoor']);
+
 
         $view = new Template();
         echo $view->render('views/interests.html');
@@ -155,5 +167,6 @@ class Controller
     {
         $view = new Template();
         echo $view->render('views/summary.html');
+        session_destroy();
     }
 }

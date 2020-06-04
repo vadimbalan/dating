@@ -1,18 +1,17 @@
 <?php
 
-class PremiumMember extends member
+class PremiumMember extends Member
 {
     private $_inDoorInterests;
     private $_outDoorInterests;
 
-    function __construct($fName = "Alex", $lName = "John", $age = 21, $gender = "male", $phone = "123-123-1234",
-                         $email = "vvadim@gmail.com", $state = "Washington",
-                         $seeking = "female", $bio = "I like food",
-                         $inDoorInterests = "Reading", $outDoorInterests = "Hiking")
+
+    public function __construct($fName, $lName, $age, $gender, $phone, $inDoorInterests = array(), $outDoorInterests = array())
     {
-        parent::__construct($fName, $lName, $age, $gender, $phone, $email, $state, $seeking, $bio);
-        $this->setinDoorInterests($inDoorInterests);
-        $this->setoutDoorInterests($outDoorInterests);
+        parent::__construct($fName, $lName, $age, $gender, $phone);
+
+        $this->_inDoorInterests = $inDoorInterests;
+        $this->_outDoorInterests = $outDoorInterests;
     }
 
     /**

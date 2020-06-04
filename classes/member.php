@@ -13,24 +13,20 @@ class Member
     private $_seeking;
     private $_bio;
 
-    public function __construct($fName = "Alex", $lName = "John", $age = 21, $gender = "male", $phone = "123-123-1234",
-                                $email = "vvadim@gmail.com", $state = "Washingotn", $seeking = "female", $bio = "I like food")
+    // constructor
+    public function __construct($fName, $lName, $age, $gender, $phone)
     {
-        $this->setFname($fName);
-        $this->setLname($lName);
-        $this->setAge($age);
-        $this->setGender($gender);
-        $this->setPhone($phone);
-        $this->setEmail($email);
-        $this->setState($state);
-        $this->setSeeking($seeking);
-        $this->setBio($bio);
+        $this->_fName = $fName;
+        $this->_lName = $lName;
+        $this->_age = $age;
+        $this->_gender = $gender;
+        $this->_phone = $phone;
     }
 
     /**
      * @return mixed
      */
-    public function getFName()
+    public function getfName()
     {
         return $this->_fName;
     }
@@ -38,7 +34,7 @@ class Member
     /**
      * @param mixed $fName
      */
-    public function setFName($fName)
+    public function setfName($fName)
     {
         $this->_fName = $fName;
     }
@@ -46,7 +42,7 @@ class Member
     /**
      * @return mixed
      */
-    public function getLName()
+    public function getlName()
     {
         return $this->_lName;
     }
@@ -54,7 +50,7 @@ class Member
     /**
      * @param mixed $lName
      */
-    public function setLName($lName)
+    public function setlName($lName)
     {
         $this->_lName = $lName;
     }
