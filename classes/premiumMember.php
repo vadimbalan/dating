@@ -5,7 +5,7 @@ class PremiumMember extends Member
     private $_inDoorInterests;
     private $_outDoorInterests;
 
-
+    // Set the outdoor and indoor interests to nothing.. empty arrays
     public function __construct($fName, $lName, $age, $gender, $phone, $inDoorInterests = array(), $outDoorInterests = array())
     {
         parent::__construct($fName, $lName, $age, $gender, $phone);
@@ -45,6 +45,4 @@ class PremiumMember extends Member
     {
         $this->_outDoorInterests = $outDoorInterests;
     }
-
-
 }
