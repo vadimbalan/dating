@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * This is the PremiumMember class that allows users to enter their interests
+ * if they check the checkbox.
+ */
 class PremiumMember extends Member
 {
     private $_inDoorInterests;

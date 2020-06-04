@@ -1,5 +1,9 @@
 <?php
 
+/*
+ * This is the member class that holds all the information of a new member
+ * @param member information
+ */
 class Member
 {
     // Declare instance variables

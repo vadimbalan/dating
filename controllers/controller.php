@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Class Controller
+ * This routes everything on the index page and is used on the index page.
+ */
 class Controller
 {
     private $_f3; //router
